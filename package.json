@@ -1,0 +1,42 @@
+{
+  "name": "ipfs-multiplexer",
+  "version": "1.0.0",
+  "description": "A multiplexer library, built on top of js-ipfs-http-client.",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "rm -rf lib && babel src --out-dir lib --copy-files --source-maps",
+    "test": "npx mocha lib/test/*.test.js --timeout 10000",
+    "generate-documentation": "npx jsdoc src/files.js -c jsdoc.js --destination documentation",
+    "prepare-publish": "npm run build && npm run test && npm run generate-documentation"
+  },
+  "author": {
+    "name": "Iñaki Arango",
+    "email": "arangoinaki@gmail.com",
+    "url": "https://inaki-arango.com/"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "babel-preset-minify": "^0.5.1",
+    "better-docs": "^1.4.7",
+    "chai": "^4.2.0",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-mocha": "^6.2.1",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "jsdoc": "^3.6.3",
+    "mocha": "^6.2.2",
+    "node-fetch": "^2.6.0",
+    "prettier": "^1.19.1"
+  },
+  "dependencies": {
+    "ipfs-http-client": "^40.1.0"
+  }
+}
